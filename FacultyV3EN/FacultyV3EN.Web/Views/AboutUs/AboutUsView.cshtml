@@ -1,0 +1,227 @@
+﻿
+@{
+    ViewBag.Title = "AboutUsView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Styles.Render("~/client/home/css")
+
+<style>
+    .home {
+        width: 100%;
+        height: 447px;
+    }
+
+    .home_background_container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .home_background {
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .home_content {
+        position: absolute;
+        left: 50%;
+        bottom: 109px;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transform: translateX(-50%);
+        background: #01BAFD;
+        padding-top: 24px;
+        padding-bottom: 18px;
+        padding-left: 39px;
+        padding-right: 42px;
+    }
+
+    .home_content h1 {
+       font-size: 72px;
+       font-weight: 400;
+       color: #FFFFFF;
+       line-height: 0.5;
+       white-space: nowrap;
+    }
+
+    .register_section {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    p {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /**/
+</style>
+<div class="home">
+    <div class="home_background_container prlx_parent">
+        <div class="home_background prlx" style="background-image: url('/Content/Client/images/background/1920x1080_dai-hoc-dong-thap.jpg'); transform: translate(0%, -7.35993%) translate3d(0px, 0px, 0px);"></div>
+    </div>
+    <div class="home_content">
+        <h1>About Us</h1>
+    </div>
+</div>
+
+<!-- Register -->
+
+<div class="register">
+
+    <div class="container-fluid">
+
+        <div class="row row-eq-height">
+            <div class="col-lg-12 nopadding">
+
+                <!-- Register -->
+
+                <div class="register_section d-flex flex-column align-items-center justify-content-center">
+                    <div class="register_content text-center">
+                        <h1 class="register_title">
+                            Introduce
+                        </h1>
+                        <p class="register_text" style="text-align: justify">
+                            <span style="color: #01BAFD;"> <b>The Faculty of Technology - Technology</b></span> was officially established under Decision No. 124 / QD - DHĐT dated March 21, 2018. The Faculty is managing 06 training majors: Computer Education, Environmental Science, Management Land, Aquaculture, Agronomy, Computer Science.
+                            <br />
+                            <span style="color: #01BAFD;"> <b>Organizational structure and staff:</b></span>  Faculty of Technology - Technology has 04 Departments with a total of 37 cadres and lecturers with master's degree or higher.
+                            <br />
+                            <span style="color: #01BAFD ;"> <b>Regarding scientific research:</b></span>        from 2016 to 2020, officials and lecturers of the Faculty of Engineering - Technology have implemented and published many works: 20 international articles, 80 articles published in specialized magazines. domestic industry, 04 ministerial-level projects and 25 grassroots projects.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Services -->
+
+<div class="services page_section">
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="section_title text-center">
+                    <h1>Our Services</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="row services_row">
+
+            <div class="col-lg-4 service_item text-left d-flex flex-column align-items-start justify-content-start">
+                <div class="icon_container d-flex flex-column justify-content-end">
+                    <img src="~/Content/Client/images/earth-globe_blue.svg" alt="">
+                </div>
+                <h3>Professional Training</h3>
+                <p style="text-align:justify">The intensive research laboratory of the Faculty with modern equipment. At present, an ISO Standard Laboratory (Analytical Center) has been established, which is preparing to establish an Aquatic Experimental Farm.</p>
+            </div>
+
+            <div class="col-lg-4 service_item text-left d-flex flex-column align-items-start justify-content-start">
+                <div class="icon_container d-flex flex-column justify-content-end">
+                    <img src="~/Content/Client/images/exam_blue.svg" alt="">
+                </div>
+                <h3>Dedicated Teachers</h3>
+                <p style="text-align:justify">
+                    Professional teaching staff, highly qualified, experienced in teaching and training students. They are passionate people, careers, love students like they love their own lives.
+
+                </p>
+            </div>
+
+            <div class="col-lg-4 service_item text-left d-flex flex-column align-items-start justify-content-start">
+                <div class="icon_container d-flex flex-column justify-content-end">
+                    <img src="~/Content/Client/images/books_blue.svg" alt="">
+                </div>
+                <h3>Good Infrastructure</h3>
+                <p style="text-align:justify">The Faculty develops training programs, teaching plans, and organizes the training process. Develop plans and organize political, ideological, ethical and lifestyle education for officials and learners.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Testimonials -->
+
+<div class="testimonials page_section">
+    <!-- <div class="testimonials_background" style="background-image:url(images/testimonials_background.jpg)"></div> -->
+    <div class="testimonials_background_container prlx_parent">
+        <div class="testimonials_background prlx" style="background-image:url('/Content/Client/images/background/bgstudent.png')"></div>
+    </div>
+    <div class="container">
+
+        <div class="row">
+            <div class="col">
+                <div class="section_title text-center">
+                    <h1>What our students say</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+
+                <div class="testimonials_slider_container">
+
+                    <!-- Testimonials Slider -->
+                    <div class="owl-carousel owl-theme testimonials_slider">
+
+                        <!-- Testimonials Item -->
+                        <div class="owl-item">
+                            <div class="testimonials_item text-center">
+                                <div class="quote">“</div>
+                                <p class="testimonials_text">If you want to be challenged, Dong Thap University is the place for you. You will not only be challenged by the curriculum but also by the talents of the students, the open learning environment and the opportunities for exploration and vast experience outside the classroom.</p>
+                                <div class="testimonial_user">
+                                    <div class="testimonial_image mx-auto">
+                                        <img src="~/Content/Client/images/Student/student_Kiet.jpg" alt="">
+                                    </div>
+                                    <div class="testimonial_name">Nguyen Kiet</div>
+                                    <div class="testimonial_title">Graduate Student</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonials Item -->
+                        <div class="owl-item">
+                            <div class="testimonials_item text-center">
+                                <div class="quote">“</div>
+                                <p class="testimonials_text">Faculty and lecturers always welcome me every time I come to work, and express my desire to enhance cooperation in training and scientific research in order to meet the development needs of Vietnam in the 21st Century.</p>
+                                <div class="testimonial_user">
+                                    <div class="testimonial_image mx-auto">
+                                        <img src="~/Content/Client/images/Student/student_An.jpg" alt="">
+                                    </div>
+                                    <div class="testimonial_name">Vo Thai An</div>
+                                    <div class="testimonial_title">Graduate Student</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonials Item -->
+                        <div class="owl-item">
+                            <div class="testimonials_item text-center">
+                                <div class="quote">“</div>
+                                <p class="testimonials_text">Truly grateful to the generations of teachers who are teaching day and night to provide society with engineers: Good competence - Hard work - Passion for creativity, these are the most important qualities of those who want create and change the world.</p>
+                                <div class="testimonial_user">
+                                    <div class="testimonial_image mx-auto">
+                                        <img src="~/Content/Client/images/Student/student_Duy3.jpg" alt="">
+                                    </div>
+                                    <div class="testimonial_name">Ho Ngoc Tu Duy</div>
+                                    <div class="testimonial_title">Graduate Student</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@Scripts.Render("~/client/home/script")
+

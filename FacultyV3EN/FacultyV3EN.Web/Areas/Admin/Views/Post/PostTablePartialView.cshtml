@@ -1,0 +1,126 @@
+﻿@model PagedList.IPagedList<FacultyV3EN.Core.Models.Entities.Post>
+@using PagedList.Mvc;
+@using FacultyV3EN.Web.Common;
+<style>
+
+</style>
+<table class="table mb-0" id="postTable">
+    <thead class="thead-light">
+        <tr>
+            <th style="width:5%;">
+                #
+            </th>
+            <th style="width:25%;">
+                Title
+            </th>
+            <th style="width:20%;">
+                Image
+            </th>
+            <th>
+                Category
+            </th>
+            <th style="width:6%;">
+                Status
+            </th>
+            <th style="width:12%;">
+                Update At
+            </th>
+            <th style="width:10%;">Action</th>
+        </tr>
+    </thead>
+    <tbody id="DataSearching">
+        @{
+            var index = 1;
+            foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">
+                        @((Model.PageNumber <= 1 ? (index++) : (index++ + ((Model.PageNumber * 10) - 10) )))
+                    </th>
+                    <td>
+                        @item.Title
+                        @{
+                            var strTitle = item.Title.Count() <= 100 ? item.Title.Replace("-", " ") : item.Title.Substring(0, 100).Replace("-", " ");
+                            var url = Url.RouteUrl("DETAILNEWS", new { title = utf8Convert.Instance.ToUrlFriendly(strTitle), id = item.Id.ToString(), category = utf8Convert.Instance.ToUrlFriendly(item.Category.Meta_Name) });
+                            //var url = Url.Action("PostDetailView", "Post", new { id = item.Id });
+                            var urluLink = @"GetDetail('" + url + "')";
+                        }
+
+                        <a onclick="@urluLink" style="cursor:pointer">
+                            <span class="badge badge-info"><i class="mdi mdi-link"></i></span>
+                        </a>
+                    </td>
+                    <td>
+                        @if (item.Url_Image.Equals("#"))
+                        {
+                            <img src="~/Content/image.png" style="width: 200px; height: 100px" alt="" />
+                        }
+                        else
+                        {
+                            <img src="@item.Url_Image" style="width: 200px; height: 100px" alt="@item.Url_Image" />
+                        }
+                    </td>
+                    <td>@item.Category.Meta_Name</td>
+                    <td>
+                        <div>
+                            @{
+                                var uPublish = @Url.Action("Publish", "Post") + "/" + item.Id;
+                                var urluPublish = @"Publish('" + uPublish + "')";
+                            }
+                            @if (item.Status)
+                            {
+                                <a onclick="@urluPublish" style="cursor:pointer">
+                                    <span class="badge badge-primary">Public</span>
+                                </a>
+                            }
+                            else
+                            {
+                                <a onclick="@urluPublish" style="cursor:pointer">
+                                    <span class="badge badge-warning">Hide</span>
+                                </a>
+                            }
+                        </div>
+                    </td>
+                    <td>@item.Update_At</td>
+                    <td>
+                        <div class="button-list">
+                            @{
+                                var uEdit = @Url.Action("AddOrEdit", "Post") + "/" + item.Id;
+                                var urlEdit = @"Popup('" + uEdit + "')";
+                                <a title="Modify" href="@uEdit" class="btn btn-icon waves-effect waves-light btn-primary btn-sm cursor:pointer" style="cursor:pointer">
+                                    <i class="fa fa-edit" style="color: white"></i>
+                                </a>
+
+                                var uDelete = @Url.Action("Delete", "Post") + "/" + item.Id;
+                                var urluDelete = @"Delete('" + uDelete + "')";
+
+                                <a title="Delete" onclick="@urluDelete" class="btn btn-icon waves-effect waves-light btn-danger btn-sm btn-delete" style="cursor:pointer">
+                                    <i class="fa fa-trash" style="color: white"></i>
+                                </a>
+                            }
+                        </div>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<script src="~/Content/jquery-3.4.1.min.js"></script>
+<script>$(document).ready(function () {
+        $("nav ul li a").addClass("page-link");
+        $("nav ul ").addClass("justify-content-end");
+    })</script>
+<hr />
+<div style="float: right">
+    Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) - @Model.PageCount
+</div>
+<div class="clearfix"></div>
+<br />
+<nav>
+    @Html.PagedListPager(Model, page => Url.Action("PostView", "Post", new { page }),
+    new PagedListRenderOptions
+    {
+        LiElementClasses = new string[] { "page-item" }
+    })
+</nav>

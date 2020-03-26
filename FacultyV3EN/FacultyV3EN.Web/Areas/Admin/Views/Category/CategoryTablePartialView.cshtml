@@ -1,0 +1,33 @@
+﻿
+@model List<FacultyV3EN.Core.Models.Entities.Category>
+
+<table class="table mb-0" id="categoryTable">
+    <thead class="thead-light">
+        <tr>
+            <th style="width:10%;">
+                #
+            </th>
+            <th >
+                Title
+            </th>
+        </tr>
+    </thead>
+    <tbody id="DataSearching">
+        @{
+            var index = 1;
+            foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">
+                        @(index++)
+                    </th>
+                    <td>@item.Meta_Name</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+
+
+

@@ -1,0 +1,21 @@
+﻿@model List<FacultyV3EN.Core.Models.Entities.Sticky>
+<div class="footer_bar d-flex flex-column flex-sm-row align-items-center">
+    <div class="footer_copyright">
+        <span>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;
+            <script>document.write(new Date().getFullYear());</script> Faculty of Engineering Technology
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        </span>
+    </div>
+    <div class="footer_social ml-sm-auto">
+        <ul class="menu_social">
+            <li class="menu_social_item"><a href="@Model[1].Meta_Value"><i class="fas fa-home"></i></a></li>
+            <li class="menu_social_item"><a href="@Model[3].Meta_Value"><i class="fab fa-youtube"></i></a></li>
+            <li class="menu_social_item"><a href="@Model[0].Meta_Value"><i class="fab fa-facebook-f"></i></a></li>
+            <li class="menu_social_item">
+                <a href="@Model[2].Meta_Value"><img src="~/Content/Client//images/flag/vietnam-flag-icon-32.png" width="auto" height="16px" alt=""></a>
+            </li>
+        </ul>
+    </div>
+</div>

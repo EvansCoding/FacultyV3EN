@@ -1,0 +1,70 @@
+﻿
+@model List<FacultyV3EN.Core.Models.Entities.Banner>
+
+<table class="table mb-0" id="categoryTable">
+    <thead class="thead-light">
+        <tr>
+            <th style="width:5%;">
+                #
+            </th>
+            <th style="width:30%;">
+                Title
+            </th>
+            <th style="width:30%;">
+                Image
+            </th>
+            <th style="width:15%;">
+                Serial
+            </th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody id="DataSearching">
+        @{
+            var index = 1;
+            foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">
+                        @( index++)
+                    </th>
+                    <td>@item.Title</td>
+                    <td>
+                        <a href="#" target="_blank">
+                            @if (item.Url_Image == null)
+                            {
+                                <img src="~/Content/image.png" style="width: 200px; height: 100px" alt="" />
+                            }
+                            else
+                            {
+                                <img src="@item.Url_Image" style="width: 200px; height: 100px" alt="@item.Url_Image" />
+                            }
+                        </a>
+                    </td>
+                    <td>@item.Serial</td>
+                    <td>
+                        <div class="button-list">
+                            @{
+                                var uEdit = @Url.Action("AddOrEdit", "Banner") + "/" + item.Id;
+                                var urlEdit = @"Popup('" + uEdit + "')";
+                                <a title="Modify" href="@uEdit" class="btn btn-icon waves-effect waves-light btn-primary btn-sm">
+                                    <i class="fa fa-edit" style="color: white"></i>
+                                </a>
+
+                                var uDelete = @Url.Action("Delete", "Banner") + "/" + item.Id;
+                                var urluDelete = @"Delete('" + uDelete + "')";
+
+                                <a title="Delete" onclick="@urluDelete" class="btn btn-icon waves-effect waves-light btn-danger btn-sm btn-delete">
+                                    <i class="fa fa-trash" style="color: white"></i>
+                                </a>
+                            }
+                        </div>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+
+

@@ -1,0 +1,103 @@
+﻿
+
+@{
+    ViewBag.Title = "TeacherView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Styles.Render("~/client/teacher/css")
+<link href="~/Content/Client/styles/teachers_responsive.css" rel="stylesheet" />
+<div class="home">
+    <div class="home_background_container prlx_parent">
+        <div class="home_background prlx" style="background-image: url('/Content/Client/images/background/1920x1080_dai-hoc-dong-thap.jpg'); transform: translate(0%, -15%) translate3d(0px, 0px, 0px);"></div>
+    </div>
+    <div class="home_content">
+        <h1>Teachers</h1>
+    </div>
+</div>
+<div class="teachers page_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" style="margin-bottom: 30px">
+                <div class="form-row align-items-center">
+                    <div class="col-md-12">
+                        <input id="search" class="form-control" type="text" name="search" placeholder="Enter keywords" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12" id="tableAjax">
+                @{
+                    Html.RenderAction("LoadTable", "Teacher", new { Area = String.Empty });
+                }
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="milestones">
+    <div class="milestones_background" style="background-image:url('/Content/Client/images/milestones_background.jpg')"></div>
+
+    <div class="container">
+        <div class="row">
+
+            <!-- Milestone -->
+            <div class="col-lg-3 milestone_col">
+                <div class="milestone text-center">
+                    <div class="milestone_icon"><img src="~/Content/Client/images/vectorpaint(1).svg" alt="..."></div>
+                    <div class="milestone_counter" data-end-value="400">400</div>
+                    <div class="milestone_text">Current Students</div>
+                </div>
+            </div>
+
+            <!-- Milestone -->
+            <div class="col-lg-3 milestone_col">
+                <div class="milestone text-center">
+                    <div class="milestone_icon"><img src="~/Content/Client/images/vectorpaint(2).svg" alt="..."></div>
+                    <div class="milestone_counter" data-end-value="39">39</div>
+                    <div class="milestone_text">Certified Teachers</div>
+                </div>
+            </div>
+
+            <!-- Milestone -->
+            <div class="col-lg-3 milestone_col">
+                <div class="milestone text-center">
+                    <div class="milestone_icon"><img src="~/Content/Client/images/vectorpaint(3).svg" alt="..."></div>
+                    <div class="milestone_counter" data-end-value="6">6</div>
+                    <div class="milestone_text">Specialized Research</div>
+                </div>
+            </div>
+
+            <!-- Milestone -->
+            <div class="col-lg-3 milestone_col">
+                <div class="milestone text-center">
+                    <div class="milestone_icon"><img src="~/Content/Client/images/vectorpaint(4).svg" alt="..."></div>
+                    <div class="milestone_counter" data-end-value="3500" data-sign-before="">+3500</div>
+                    <div class="milestone_text">Graduate Students</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+@Scripts.Render("~/client/teacher/script")
+
+@*<script src="~/Scripts/jquery-3.4.1.min.js"></script>*@
+<script>
+    $(document).ready(function () {
+        $('#search').keypress(function () {
+            var name = $(this).val();
+            $.ajax({
+                type: "get",
+                url: "/Teacher/LoadTable?search=" + name,
+                contentType: "html",
+                success: function (response) {
+                    $('#tableAjax').html(response);
+                }
+            })
+        });
+    })
+</script>

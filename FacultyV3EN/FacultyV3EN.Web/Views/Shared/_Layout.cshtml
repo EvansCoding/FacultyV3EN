@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>FoET | Faculty of Engineering Technology</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    @{
+        Html.RenderAction("MetaView", "Confirguration", new { Area = String.Empty });
+    }
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="~/Content/Client/images/icon/logokonen.ico" type="image/x-icon" />
+
+    @Styles.Render("~/client/css")
+    <link href="~/Content/Client/plugins/fontawesome-free-5.0.1/css/fontawesome-all.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    @{
+        Html.RenderAction("MessengerView", "Confirguration", new { Area = String.Empty });
+    }
+    <div class="super_container">
+        <!-- Header -->
+        @{
+            Html.RenderAction("_header", "Home");
+        }
+
+        <!-- Menu -->
+        @{
+            Html.RenderAction("_menu", "Home");
+        }
+
+        <!-- Content -->
+        @RenderBody()
+
+        <!-- Footer -->
+        @{
+            Html.RenderAction("_footer", "Home");
+        }
+    </div>
+
+    @Scripts.Render("~/client/script")
+</body>
+</html>

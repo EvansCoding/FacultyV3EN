@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DataContext-Web.config Connection String" description="DataContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=SQL5052.site4now.net;Initial Catalog=DB_A56CCD_facultyV3EN;User Id=DB_A56CCD_facultyV3EN_admin;Password=evans260199;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\Project\\Private\\Websites\\FacultyV3EN\\FacultyV3EN\.Web\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DataContext']/@connectionString" />
+  </parameter>
+</parameters>

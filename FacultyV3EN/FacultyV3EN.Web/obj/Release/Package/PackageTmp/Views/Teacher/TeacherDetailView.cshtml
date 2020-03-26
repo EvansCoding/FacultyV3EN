@@ -1,0 +1,167 @@
+﻿@model FacultyV3EN.Core.Models.Entities.Lecturer
+@{
+    ViewBag.Title = "TeacherDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Styles.Render("~/client/news_post/css")
+<style>
+    .news {
+        padding-bottom: 50px;
+    }
+
+    .table tr td, .table th {
+        color: #626262;
+    }
+
+    ul li {
+        color: #626262;
+    }
+    .latest_post_title {
+        margin-top: 5px !important;
+    }
+    .latest_post{
+        margin-bottom: 5px;
+    }
+</style>
+
+<div class="home">
+    <div class="home_background_container prlx_parent">
+        <div class="home_background prlx" style="background-image:url('/Content/Client/images/news_background.jpg')"></div>
+    </div>
+    <div class="home_content">
+        <h1>INFOR TEACHER</h1>
+    </div>
+</div>
+
+<!-- News -->
+
+<div class="news">
+    <div class="container">
+        <div class="row">
+
+            <!-- News Post Column -->
+
+            <div class="col-lg-8">
+                <h2>
+                    <a href="#" style="text-transform: uppercase; color: #626262;">@Model.FullName</a>
+                </h2>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th colspan="3" style="text-align: center; color: white; background-color: rgb(43, 179, 255); text-transform: uppercase;">Information</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="8" style="text-align: center; vertical-align: middle; width:30%;"> <img src="@Model.Url_Image" height="200px" width="180px" /> </td>
+                                <td>Native Land</td>
+                                <td>@Model.Native_Land</td>
+                            </tr>
+
+                            <tr>
+
+                                <td style="width: 20%;">Title</td>
+                                <td>@Model.Title</td>
+                            </tr>
+                            <tr>
+
+                                <td style="width: 20%;">    Position</td>
+                                <td>@Model.Position</td>
+                            </tr>
+                            <tr>
+
+                                <td style="width: 20%;">Academic Rank</td>
+                                <td>@Model.Academic_Rank</td>
+                            </tr>
+                            <tr>
+
+                                <td style="width: 20%;">Degree</td>
+                                <td>@Model.Degree</td>
+                            </tr>
+                            <tr>
+
+                                <td style="width: 20%;">Specialized</td>
+                                <td>@Model.Specialized</td>
+                            </tr>
+                            <tr>
+
+                                <td style="width: 20%;">Email</td>
+                                <td>@Model.Email</td>
+                            </tr>
+                            <tr>
+
+                                <td style="width: 20%;">Phone</td>
+                                <td>@Model.Phone</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                @if (Model.Training_Processes.Count > 0)
+                {
+                    <h4 style="color: #b22222;"> <b>Training process</b> </h4>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 15%; text-align: center;">Level</th>
+                                    <th style="width: 20%; text-align: center;">Graduation year</th>
+                                    <th style="width: 20%; text-align: center; ">Graduation school</th>
+                                    <th style="text-align: center;">Specialized graduate</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach (var item in Model.Training_Processes)
+                                {
+                                    <tr>
+                                        <td style="width: 15%; text-align: center;">@item.Degree</td>
+                                        <td style="width: 20%; text-align: center;">@item.Graduation_Year</td>
+                                        <td style="width: 25%; ">item.Graduation_School</td>
+                                        <td>@item.Graduation_Specialized</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+
+                @if (!Model.Specialized_Research.Equals("...") || !Model.Teaching.Equals("..."))
+                {
+                    <h4 style="color: #b22222;"> <b>Specialized research and teaching</b> </h4>
+                    <ul t="">
+                        @if (!Model.Specialized_Research.Equals("..."))
+                        {
+                            <li>- Specialized research: @Model.Specialized_Research</li>
+                        }
+                        @if (!Model.Teaching.Equals("..."))
+                        {
+                            <li style="text-align: justify;">
+                                - The subjects involved in teaching: @Model.Teaching
+                            </li>
+                        }
+                    </ul>
+                    <br />
+                }
+
+                @if (!Model.Url_Scientific_Works.Equals("#"))
+                {
+                    <h4 style="color: #b22222;"> <b>Scientific works </b><a href="@Model.Url_Scientific_Works" target="_blank"> (DETAIL)</a> </h4>
+                }
+
+            </div>
+
+            <!-- Sidebar Column -->
+
+            <div class="col-lg-4">
+                @{
+                    Html.RenderAction("_sidebar", "teacher", new { Area = String.Empty });
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@Scripts.Render("~/client/news_post/script")
+

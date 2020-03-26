@@ -1,0 +1,62 @@
+﻿@model List<FacultyV3EN.Core.Models.Entities.Post>
+@using FacultyV3EN.Web.Common;
+<style>
+    .text-overflow-string {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        /*width: 340px;*/
+    }
+</style>
+
+<div class="events page_section">
+    <div class="container">
+
+        <div class="row">
+            <div class="col">
+                <div class="section_title text-center">
+                    <h1>Upcoming Events</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="event_items">
+
+            @foreach (var item in Model)
+            {
+                <!-- Event Item -->
+                <div class="row event_item">
+                    <div class="col">
+                        <div class="row d-flex flex-row align-items-end">
+
+                            <div class="col-lg-2 order-lg-1 order-2">
+                                <div class="event_date d-flex flex-column align-items-center justify-content-center">
+                                    <div class="event_day">@item.DateOfEvents.Value.Day</div>
+                                    <div class="event_month">@item.DateOfEvents.Value.ToString("MMMM")</div>
+                                </div>
+                            </div>
+                            @{
+                                var strTitle = item.Title.Count() <= 100 ? item.Title.Replace("-", " ") : item.Title.Substring(0, 100).Replace("-", " ");
+                                var url = Url.RouteUrl("DETAILNEWS", new { title = utf8Convert.Instance.ToUrlFriendly(strTitle), id = item.Id.ToString(), category = utf8Convert.Instance.ToUrlFriendly(item.Category.Meta_Name) });
+                                //var url = Url.Action("PostDetailView", "Post", new { id = item.Id });
+                            }
+                            <div class="col-lg-6 order-lg-2 order-3">
+                                <div class="event_content">
+                                    <div class="event_name text-overflow-string"><a class="trans_200" href="@url">@item.Title</a></div>
+                                    <div class="event_location text-overflow-string">@item.Place</div>
+                                    <p>@item.Description</p>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 order-lg-3 order-1">
+                                <div class="event_image">
+                                    <img src="@item.Url_Image" width="350" height="auto" alt="#">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,104 @@
+﻿
+@{
+    ViewBag.Title = "BannerView";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div id="data1">
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box">
+                <h4 class="page-title">List Banner</h4>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-row align-items-center">
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-info waves-effect waves-light" onclick="window.location.href='@Url.Action("AddOrEdit","Banner")'">
+                                        <i class="fas fa-plus "></i>
+                                        <span>Add</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive" id="tableAjax">
+                        @{
+                            Html.RenderAction("LoadTable", "Banner");
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script>
+        function Popup(urlMem) {
+            var url = urlMem;
+            $.ajax({
+                url: url,
+                type: 'GET',
+                success: function (response) {
+                    $('#modalcontent').html(response);
+                    $("#exampleModal").modal("show");
+                },
+                error: function (xhr, status) {
+                    alert(status);
+                }
+            });
+        }
+
+        function Delete(url) {
+            swal({
+                title: "You definitely want to delete?",
+                text: "If deleted, data cannot be recovered!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    $.ajax({
+                        type: "POST",
+                        url: url,
+                        success: function (data) {
+                            if (data.success) {
+                                $("#tableAjax").load("@Url.Action("LoadTable","Banner")");
+                                swal("Success", {
+                                    icon: "success",
+                                });
+                            } else {
+                                $("#tableAjax").load("@Url.Action("LoadTable","Banner")");
+                                swal("Failed", {
+                                    icon: "error",
+                                });
+                            }
+                        }
+                    });
+                }
+                else {
+                    swal("Data is still safe!");
+                }
+            });
+        }
+    </script>
+}
+
+
