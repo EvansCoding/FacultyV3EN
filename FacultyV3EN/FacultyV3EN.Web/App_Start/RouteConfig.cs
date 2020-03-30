@@ -26,24 +26,29 @@ namespace FacultyV3EN.Web
             routes.MapRoute(
                 name: "NEWS",
                 url: "news/{id}",
-                defaults: new { controller = "Post", action = "PostNewsView", id = UrlParameter.Optional },
+                defaults: new { controller = "News", action = "NewsView", id = UrlParameter.Optional },
                 namespaces: new[] { "FacultyV3EN.Web.Controllers" }
             );
 
             routes.MapRoute(
                 name: "EVENTS",
                 url: "events/{id}",
-                defaults: new { controller = "Post", action = "PostEventsView", id = UrlParameter.Optional },
+                defaults: new { controller = "Events", action = "EventsView", id = UrlParameter.Optional },
                 namespaces: new[] { "FacultyV3EN.Web.Controllers" }
             );
 
             routes.MapRoute(
                 name: "DETAILNEWS",
-                url: "FoET/{category}/{title}/{id}",
-                defaults: new { controller = "Post", action = "PostDetailView", category = UrlParameter.Optional, title = UrlParameter.Optional, id = UrlParameter.Optional },
+                url: "news/{title}/{id}",
+                defaults: new { controller = "News", action = "NewsDetailView", title = UrlParameter.Optional, id = UrlParameter.Optional },
                 namespaces: new[] { "FacultyV3EN.Web.Controllers" }
             );
-
+            routes.MapRoute(
+                name: "DETAILEVENTS",
+                url: "events/{title}/{id}",
+                defaults: new { controller = "Events", action = "EventsDetailView", title = UrlParameter.Optional, id = UrlParameter.Optional },
+                namespaces: new[] { "FacultyV3EN.Web.Controllers" }
+            );
             routes.MapRoute(
                 name: "TEACHERS",
                 url: "teachers/{id}",

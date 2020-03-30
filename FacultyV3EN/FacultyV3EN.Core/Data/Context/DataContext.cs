@@ -19,11 +19,11 @@ namespace FacultyV3EN.Core.Data.Context
 
         public virtual DbSet<Account> Accounts { get; set; }
         public virtual DbSet<Banner> Banners { get; set; }
-        public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Confirguration> Confirgurations { get; set; }
         public virtual DbSet<Contact> Contacts { get; set; }
         public virtual DbSet<Lecturer> Lecturers { get; set; }
-        public virtual DbSet<Post> Posts { get; set; }
+        public virtual DbSet<News> News { get; set; }
+        public virtual DbSet<Events> Events { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<Sticky> Stickies { get; set; }
         public virtual DbSet<Training_Process> Training_Processes { get; set; }

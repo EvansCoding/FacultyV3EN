@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-12">
             <div class="page-title-box">
-                <h4 class="page-title">Danh mục Tài khoản</h4>
+                <h4 class="page-title">List Account</h4>
                 <div class="clearfix"></div>
             </div>
         </div>
@@ -19,12 +19,12 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h6 class="">Tìm kiếm</h6>
+                            <h6 class="">Search</h6>
                             @using (@Html.BeginForm("SearchAccount", "Account", FormMethod.Post, new { onsubmit = "return SubmitSearch(this)" }))
                             {
                                 <div class="form-row align-items-center">
                                     <div class="col-auto">
-                                        <input id="search" class="form-control" type="text" name="search" placeholder="Từ khóa bất kỳ" />
+                                        <input id="search" class="form-control" type="text" name="search" placeholder="Enter keywords" />
                                     </div>
                                     <div class="col-auto">
                                         <button type="submit" id="searchByName" class="btn btn-icon waves-effect waves-light btn-primary">
@@ -32,7 +32,7 @@
                                         </button>
                                     </div>
                                     <div class="col-auto">
-                                        <button type="button" class="btn btn-icon waves-effect waves-light btn-success" onclick="Popup('@Url.Action("AddOrEdit","Account")')">
+                                        <button type="button" class="btn btn-icon waves-effect waves-light btn-success"onclick="window.location.href='@Url.Action("AddOrEdit","Account")'">
                                             <i class="fas fa-plus "></i>
                                         </button>
                                     </div>
@@ -97,26 +97,26 @@
             });
             return false;
         }
-        function Popup(urlMem) {
+        //function Popup(urlMem) {
 
-            var url = urlMem;
-            $.ajax({
-                url: url,
-                type: 'GET',
-                success: function (response) {
-                    $('#modalcontent').html(response);
-                    $("#exampleModal").modal("show");
-                },
-                error: function (xhr, status) {
-                    alert(status);
-                }
-            });
-        }
+        //    var url = urlMem;
+        //    $.ajax({
+        //        url: url,
+        //        type: 'GET',
+        //        success: function (response) {
+        //            $('#modalcontent').html(response);
+        //            $("#exampleModal").modal("show");
+        //        },
+        //        error: function (xhr, status) {
+        //            alert(status);
+        //        }
+        //    });
+        //}
 
         function Delete(url) {
             swal({
-                title: "Bạn chắc chắn muốn xóa?",
-                text: "Nếu xóa dữ liệu sẽ không thể phục hồi được!",
+                title: "Are you sure you want to delete?",
+                text: "Data deleted will not be recoverable!",
                 icon: "warning",
                 buttons: true,
                 dangerMode: true,
@@ -133,13 +133,13 @@
                                 var name = $("#search").val();
                                 $("#tableAjax").load("@Url.Action("LoadTable", "Account")");
 
-                                swal("Xóa thành công", {
+                                swal("Delete successful", {
                                     icon: "success",
                                 });
                             } else {
                                 $("#tableAjax").load("@Url.Action("LoadTable", "Account")");
 
-                                swal("Xóa thất bại", {
+                                swal("Delete failed", {
                                     icon: "error",
                                 });
                             }
@@ -147,7 +147,7 @@
                     });
                 }
                 else {
-                     swal("Dữ liệu vẫn an toàn!");
+                    swal("Data is still safe!");
                 }
             });
         }

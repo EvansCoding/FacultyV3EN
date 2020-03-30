@@ -12,14 +12,16 @@ namespace FacultyV3EN.Web.Controllers
         private readonly IContactService contactService;
         private readonly IStickyService stickyService;
         private readonly IBannerService bannerService;
-        private readonly IPostService postService;
+        private readonly INewsService newsService;
+        private readonly IEventsService eventsService;
         private IDataContext context;
-        public HomeController(IContactService contactService, IStickyService stickyService, IBannerService bannerService, IPostService postService, IDataContext context)
+        public HomeController(IContactService contactService, IStickyService stickyService, IBannerService bannerService, INewsService newsService, IEventsService eventsService, IDataContext context)
         {
             this.contactService = contactService;
             this.stickyService = stickyService;
             this.bannerService = bannerService;
-            this.postService = postService;
+            this.newsService = newsService;
+            this.eventsService = eventsService;
             this.context = context;
         }
         public ActionResult Index()
@@ -59,20 +61,16 @@ namespace FacultyV3EN.Web.Controllers
 
         public ActionResult News()
         {
-            var model = postService.GetPostsByCategory(Constant.CATEGORY_NEWS, 3);
+            var model = newsService.GetNews(3);
             return PartialView(model);
         }
 
         public ActionResult Events()
         {
-            var model = postService.GetPostsByCategory(Constant.CATEGORY_EVENTS, 3);
+            var model = eventsService.GetEvents( 3);
             return PartialView(model);
         }
 
-        public ActionResult _sidebar()
-        {
-            var model = context.Posts.Include(x => x.Account).Include(x => x.Category).OrderByDescending(x => x.Update_At).Take(3).ToList();
-            return PartialView(model);
-        }
+
     }
 }

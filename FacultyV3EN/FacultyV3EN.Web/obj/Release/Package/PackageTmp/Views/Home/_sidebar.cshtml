@@ -18,7 +18,7 @@
                     </div>
                     @{
                         var strTitle = item.Title.Count() <= 100 ? item.Title.Replace("-", " ") : item.Title.Substring(0, 100).Replace("-", " ");
-                        var url = Url.RouteUrl("DETAILNEWS", new { title = utf8Convert.Instance.ToUrlFriendly(strTitle), id = item.Id.ToString(), category = utf8Convert.Instance.ToUrlFriendly(item.Category.Meta_Name) });
+                        var url = Url.RouteUrl("DETAILNEWS", new { title = utf8Convert.Instance.ToUrlFriendly(strTitle), id = item.Id.ToString() });
                     }
                     <div class="latest_post_title"><a href="@url">@item.Title</a></div>
                     <div class="latest_post_meta">

@@ -135,11 +135,11 @@
     <Compile Include="Data\Context\DataContext.cs" />
     <Compile Include="Data\Mapping\AccountMapping.cs" />
     <Compile Include="Data\Mapping\BannerMapping.cs" />
-    <Compile Include="Data\Mapping\CategoryMapping.cs" />
     <Compile Include="Data\Mapping\ConfirgurationMapping.cs" />
     <Compile Include="Data\Mapping\ContactMapping.cs" />
+    <Compile Include="Data\Mapping\EventsMapping.cs" />
     <Compile Include="Data\Mapping\LecturerMapping.cs" />
-    <Compile Include="Data\Mapping\PostMapping.cs" />
+    <Compile Include="Data\Mapping\NewsMapping.cs" />
     <Compile Include="Data\Mapping\RoleMapping.cs" />
     <Compile Include="Data\Mapping\StickyMapping.cs" />
     <Compile Include="Data\Mapping\Training_ProcessMapping.cs" />
@@ -149,53 +149,29 @@
     <Compile Include="Interfaces\IServices\IAccountService.cs" />
     <Compile Include="Interfaces\IServices\IBannerService.cs" />
     <Compile Include="Interfaces\IServices\ICacheService.cs" />
-    <Compile Include="Interfaces\IServices\ICategoryService.cs" />
     <Compile Include="Interfaces\IServices\IConfigService.cs" />
     <Compile Include="Interfaces\IServices\IConfirgurationService.cs" />
     <Compile Include="Interfaces\IServices\IContactService.cs" />
+    <Compile Include="Interfaces\IServices\IEventsService.cs" />
     <Compile Include="Interfaces\IServices\IGraduationService.cs" />
     <Compile Include="Interfaces\IServices\ILecturerService.cs" />
-    <Compile Include="Interfaces\IServices\IPostService.cs" />
+    <Compile Include="Interfaces\IServices\INewsService.cs" />
     <Compile Include="Interfaces\IServices\IRoleService.cs" />
     <Compile Include="Interfaces\IServices\IStickyService.cs" />
     <Compile Include="Ioc\UnityDependencyResolver.cs" />
     <Compile Include="Ioc\UnityHelper.cs" />
-    <Compile Include="Migrations\202003241435232_Initialize.cs" />
-    <Compile Include="Migrations\202003241435232_Initialize.designer.cs">
-      <DependentUpon>202003241435232_Initialize.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003250634131_Initalize_1.cs" />
-    <Compile Include="Migrations\202003250634131_Initalize_1.designer.cs">
-      <DependentUpon>202003250634131_Initalize_1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003250938058_Initialize_2.cs" />
-    <Compile Include="Migrations\202003250938058_Initialize_2.designer.cs">
-      <DependentUpon>202003250938058_Initialize_2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003250940554_Initialize_3.cs" />
-    <Compile Include="Migrations\202003250940554_Initialize_3.designer.cs">
-      <DependentUpon>202003250940554_Initialize_3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003251128156_Initialize_4.cs" />
-    <Compile Include="Migrations\202003251128156_Initialize_4.designer.cs">
-      <DependentUpon>202003251128156_Initialize_4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003251130081_Initialize_5.cs" />
-    <Compile Include="Migrations\202003251130081_Initialize_5.designer.cs">
-      <DependentUpon>202003251130081_Initialize_5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003251133104_Initialize_6.cs" />
-    <Compile Include="Migrations\202003251133104_Initialize_6.designer.cs">
-      <DependentUpon>202003251133104_Initialize_6.cs</DependentUpon>
+    <Compile Include="Migrations\202003300732566_initialize_1.cs" />
+    <Compile Include="Migrations\202003300732566_initialize_1.designer.cs">
+      <DependentUpon>202003300732566_initialize_1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Entities\Account.cs" />
     <Compile Include="Models\Entities\Banner.cs" />
-    <Compile Include="Models\Entities\Category.cs" />
     <Compile Include="Models\Entities\Confirguration.cs" />
     <Compile Include="Models\Entities\Contact.cs" />
+    <Compile Include="Models\Entities\Events.cs" />
     <Compile Include="Models\Entities\Lecturer.cs" />
-    <Compile Include="Models\Entities\Post.cs" />
+    <Compile Include="Models\Entities\News.cs" />
     <Compile Include="Models\Entities\Role.cs" />
     <Compile Include="Models\Entities\Sticky.cs" />
     <Compile Include="Models\Entities\Training_Process.cs" />
@@ -207,13 +183,13 @@
     <Compile Include="Services\AccountService.cs" />
     <Compile Include="Services\BannerService.cs" />
     <Compile Include="Services\CacheService.cs" />
-    <Compile Include="Services\CategoryService.cs" />
     <Compile Include="Services\ConfigService.cs" />
     <Compile Include="Services\ConfirgurationService.cs" />
     <Compile Include="Services\ContactService.cs" />
+    <Compile Include="Services\EventsService.cs" />
     <Compile Include="Services\GraduationService.cs" />
     <Compile Include="Services\LecturerService.cs" />
-    <Compile Include="Services\PostService.cs" />
+    <Compile Include="Services\NewsService.cs" />
     <Compile Include="Services\RoleService.cs" />
     <Compile Include="Services\StickyService.cs" />
     <Compile Include="SiteConfig\SiteConfig.cs" />
@@ -225,26 +201,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202003241435232_Initialize.resx">
-      <DependentUpon>202003241435232_Initialize.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003250634131_Initalize_1.resx">
-      <DependentUpon>202003250634131_Initalize_1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003250938058_Initialize_2.resx">
-      <DependentUpon>202003250938058_Initialize_2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003250940554_Initialize_3.resx">
-      <DependentUpon>202003250940554_Initialize_3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003251128156_Initialize_4.resx">
-      <DependentUpon>202003251128156_Initialize_4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003251130081_Initialize_5.resx">
-      <DependentUpon>202003251130081_Initialize_5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003251133104_Initialize_6.resx">
-      <DependentUpon>202003251133104_Initialize_6.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202003300732566_initialize_1.resx">
+      <DependentUpon>202003300732566_initialize_1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

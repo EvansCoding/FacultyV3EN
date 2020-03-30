@@ -16,7 +16,12 @@ namespace FacultyV3EN.Core.Data.Mapping
             Property(x => x.Update_At).IsOptional();
             Property(x => x.Url_Image).IsOptional();
 
-            HasMany(x => x.Posts)
+            HasMany(x => x.Events)
+                .WithRequired(x => x.Account)
+                .Map(x => x.MapKey("Account_ID"))
+                .WillCascadeOnDelete(false);
+
+            HasMany(x => x.News)
                 .WithRequired(x => x.Account)
                 .Map(x => x.MapKey("Account_ID"))
                 .WillCascadeOnDelete(false);

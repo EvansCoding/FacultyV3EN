@@ -207,13 +207,13 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AccountController.cs" />
     <Compile Include="Areas\Admin\Controllers\BannerController.cs" />
-    <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\ConfirgurationController.cs" />
     <Compile Include="Areas\Admin\Controllers\ContactController.cs" />
+    <Compile Include="Areas\Admin\Controllers\EventsController.cs" />
     <Compile Include="Areas\Admin\Controllers\GraduationController.cs" />
     <Compile Include="Areas\Admin\Controllers\LecturerController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
-    <Compile Include="Areas\Admin\Controllers\PostController.cs" />
+    <Compile Include="Areas\Admin\Controllers\NewsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProfileController.cs" />
     <Compile Include="Areas\Admin\Controllers\StickyController.cs" />
     <Compile Include="Common\BaseController.cs" />
@@ -222,8 +222,9 @@
     <Compile Include="Controllers\AboutUsController.cs" />
     <Compile Include="Controllers\ConfirgurationController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\PostController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\TeacherController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1040,11 +1041,9 @@
     <Content Include="Areas\Admin\Views\Account\CRUDAccount.cshtml" />
     <Content Include="Areas\Admin\Views\Profile\ProfileView.cshtml" />
     <Content Include="Areas\Admin\Views\Login\LoginView.cshtml" />
-    <Content Include="Areas\Admin\Views\Category\CategoryView.cshtml" />
-    <Content Include="Areas\Admin\Views\Category\CategoryTablePartialView.cshtml" />
-    <Content Include="Areas\Admin\Views\Post\PostView.cshtml" />
-    <Content Include="Areas\Admin\Views\Post\CRUDPost.cshtml" />
-    <Content Include="Areas\Admin\Views\Post\PostTablePartialView.cshtml" />
+    <Content Include="Areas\Admin\Views\News\NewsView.cshtml" />
+    <Content Include="Areas\Admin\Views\News\CRUDNews.cshtml" />
+    <Content Include="Areas\Admin\Views\News\NewsTablePartialView.cshtml" />
     <Content Include="Areas\Admin\Views\Graduation\GraduationView.cshtml" />
     <Content Include="Areas\Admin\Views\Graduation\CRUDGraduation.cshtml" />
     <Content Include="Areas\Admin\Views\Graduation\GraduationTablePartialView.cshtml" />
@@ -1061,6 +1060,9 @@
     <Content Include="Content\Client\plugins\fontawesome-free-5.0.1\webfonts\fa-solid-900.woff" />
     <Content Include="Content\Client\plugins\fontawesome-free-5.0.1\webfonts\fa-solid-900.woff2" />
     <Content Include="Areas\Admin\Views\Shared\Error401.cshtml" />
+    <Content Include="Areas\Admin\Views\Events\CRUDEvents.cshtml" />
+    <Content Include="Areas\Admin\Views\Events\EventsTablePartialView.cshtml" />
+    <Content Include="Areas\Admin\Views\Events\EventsView.cshtml" />
     <None Include="packages.config" />
     <Content Include="Scripts\tinymce\langs\readme.md" />
     <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-mobile.woff" />
@@ -1078,8 +1080,8 @@
     <Content Include="Views\Home\News.cshtml" />
     <Content Include="Views\Home\Events.cshtml" />
     <Content Include="Views\Contact\ContactView.cshtml" />
-    <Content Include="Views\Post\PostView.cshtml" />
-    <Content Include="Views\Post\PostDetailView.cshtml" />
+    <Content Include="Views\News\NewsView.cshtml" />
+    <Content Include="Views\News\NewsDetailView.cshtml" />
     <Content Include="Views\Home\_sidebar.cshtml" />
     <Content Include="Views\Teacher\TeacherView.cshtml" />
     <Content Include="Views\Teacher\TeacherTablePartialView.cshtml" />
@@ -1089,6 +1091,13 @@
     <Content Include="Views\Confirguration\MessengerView.cshtml" />
     <Content Include="Views\Confirguration\MetaView.cshtml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <Content Include="Views\Events\EventsDetailView.cshtml" />
+    <Content Include="Views\Events\EventsView.cshtml" />
+    <Content Include="Views\News\_sidebar.cshtml" />
+    <Content Include="Views\Events\_sidebar.cshtml" />
+    <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FacultyV3EN.Core\FacultyV3EN.Core.csproj">

@@ -1,6 +1,6 @@
 ﻿
 @model FacultyV3EN.Core.Models.Entities.Confirguration
-@if (Model != null)
+@if (!Model.Meta_Value.Equals("#"))
 {
     <!-- Load Facebook SDK for JavaScript -->
     <div id="fb-root"></div>

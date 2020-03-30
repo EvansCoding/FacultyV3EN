@@ -33,6 +33,7 @@ namespace FacultyV3EN.Web.Areas.Admin.Controllers
                 model.Password = "";
                 model.Create_At = data.Create_At;
                 model.Update_At = data.Update_At;
+                model.Url_Image = data.Url_Image;
                 model.Role = data.Role.Name;
                 return View("ProfileView", model);
             }

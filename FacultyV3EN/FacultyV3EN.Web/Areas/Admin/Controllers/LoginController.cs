@@ -44,7 +44,8 @@ namespace FacultyV3EN.Web.Areas.Admin.Controllers
                     return RedirectToAction("ProfileView", "Profile", new { Area = "Admin" });
                 }
             }
-            return RedirectToAction("LoginView", "Login", new { Area = "Admin" });
+            ModelState.AddModelError(string.Empty, "The account or password is incorrect!");
+            return View("LoginView");
         }
 
         public ActionResult LogOut()

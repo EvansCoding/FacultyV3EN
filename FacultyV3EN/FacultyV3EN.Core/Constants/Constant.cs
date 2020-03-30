@@ -25,6 +25,9 @@ namespace FacultyV3EN.Core.Constants
         public const string ADMIN = "ADMIN";
         public const string POSTER = "POSTER";
 
+        public const string NEWS = "NEWS";
+        public const string EVENTS = "EVENTS";
+
         public static IDictionary<string, string> ListActionPage = new Dictionary<string, string>() {
 
             { "NEWS", "news" },

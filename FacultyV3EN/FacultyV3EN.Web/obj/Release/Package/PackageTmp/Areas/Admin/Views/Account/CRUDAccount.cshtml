@@ -6,7 +6,7 @@
 <div class="row">
     <div class="col-12">
         <div class="page-title-box">
-            <h4 class="page-title">Cập nhật</h4>
+            <h4 class="page-title">Update</h4>
             <div class="clearfix"></div>
         </div>
     </div>
@@ -22,7 +22,7 @@
 
                     @Html.HiddenFor(model => model.Id)
                     <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Tên <span class="text-danger">*</span></label>
+                        <label for="recipient-name" class="col-form-label">Full Name <span class="text-danger">*</span></label>
                         @Html.EditorFor(model => model.FullName, new { htmlAttributes = new { @class = "form-control", placeholder = "Nhập tên", required = "required" } })
                         @Html.ValidationMessageFor(x => x.FullName, "", new { @class = "text-danger" })
                     </div>
@@ -41,22 +41,22 @@
                     </div>
                     <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Email <span class="text-danger">*</span></label>
-                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", placeholder = "Nhập Email", required = "required" } })
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", placeholder = "...", required = "required" } })
                         @Html.ValidationMessageFor(x => x.Email, "", new { @class = "text-danger" })
                     </div>
                     <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Mật khẩu <span class="text-danger">*</span></label>
-                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", placeholder = "Nhập mật khẩu" } })
+                        <label for="recipient-name" class="col-form-label">Password <span class="text-danger">*</span></label>
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", placeholder = "..." } })
                         @Html.ValidationMessageFor(x => x.Password, "", new { @class = "text-danger" })
                     </div>
                     <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Quyền <span class="text-danger">*</span></label>
+                        <label for="recipient-name" class="col-form-label">Role <span class="text-danger">*</span></label>
                         @Html.DropDownListFor(model => model.RoleID, ViewBag.ListOfRole as SelectList, new { @id = "DropDwnRole", @class = "form-control" })
                     </div>
 
                     <div class="form-group text-right mb-0">
-                        <button class="btn btn-primary" type="submit">Lưu</button>
-                        <button type="button" data-dismiss="modal" class="btn btn-secondary">Đóng</button>
+                        <button class="btn btn-primary" type="submit">Save</button>
+                        <button type="button" onclick="window.location.href = '@Url.Action("AccountView","Account")'" class="btn btn-secondary">Close</button>
                     </div>
                 }
             </div>

@@ -21,6 +21,7 @@ namespace FacultyV3EN.Core.Models.Entities
         public DateTime Update_At { get; set; }
 
         public virtual Role Role { get; set; }
-        public virtual IList<Post> Posts { get; set; }
+        public virtual IList<News> News { get; set; }
+        public virtual IList<Events> Events { get; set; }
     }
 }

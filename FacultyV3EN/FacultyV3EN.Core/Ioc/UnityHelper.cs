@@ -49,8 +49,8 @@
             Container.BindInRequestScope<ILecturerService, LecturerService>();
             Container.BindInRequestScope<IAccountService, AccountService>();
             Container.BindInRequestScope<IRoleService, RoleService>();
-            Container.BindInRequestScope<ICategoryService, CategoryService>();
-            Container.BindInRequestScope<IPostService, PostService>();
+            Container.BindInRequestScope<INewsService, NewsService>();
+            Container.BindInRequestScope<IEventsService, EventsService>();
             Container.BindInRequestScope<IGraduationService, GraduationService>();
         }
     }
