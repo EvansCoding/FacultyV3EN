@@ -190,6 +190,13 @@
 
 @media only screen and (max-width: 768px)
 {
+    .news_post_image img {
+        height: 420px !important;
+    }
+
+    .latest_post_image img {
+        height: 420px !important;
+    }
 	
 }
 
@@ -222,6 +229,13 @@
 	{
 		margin-top: 15px;
 	}
+    .news_post_image img {
+        height: 420px !important;
+    }
+
+    .latest_post_image img {
+        height: 420px !important;
+    }
 }
 
 /************
@@ -383,6 +397,14 @@
 		height: 60px;
 		top: 15px;
 	}
+
+    .news_post_image img {
+        height: 220px !important;
+    }
+
+    .latest_post_image img {
+        height: 220px !important;
+    }
 }
 
 /************
@@ -391,5 +413,11 @@
 
 @media only screen and (max-width: 400px)
 {
-	
+    .news_post_image img {
+        height: 200px !important;
+    }
+
+    .latest_post_image img {
+        height: 200px !important;
+    }
 }

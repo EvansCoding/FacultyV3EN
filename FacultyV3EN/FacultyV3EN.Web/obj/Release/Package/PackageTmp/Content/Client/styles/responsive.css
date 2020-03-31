@@ -119,6 +119,14 @@
     .hero_box {
         padding-left: 20px;
     }
+
+    .card-img-top {
+        height: 200px !important;
+    }
+
+    .event_image img {
+        height: 180px !important;
+    }
 }
 
 
@@ -147,9 +155,10 @@
 
 @media only screen and (max-width: 991px) {
 
-    .hero_slide_content {
+    .hero_slide_content h1 span{
         visibility: hidden;
     }
+
     .footer .container {
         text-align: center;
     }
@@ -240,6 +249,14 @@
         .footer_col:last-child {
             margin-bottom: 0px;
         }
+
+    .event_image img{
+        height: 360px !important;
+    }
+
+    .card-img-top{
+        height: 360px !important;
+    }
 }
 
 
@@ -264,6 +281,13 @@
 ************/
 
 @media only screen and (max-width: 768px) {
+    .card-img-top {
+        height: 400px !important;
+    }
+
+    .event_image img {
+        height: 400px !important;
+    }
 }
 
 
@@ -293,6 +317,11 @@
 ************/
 
 @media only screen and (max-width: 575px) {
+
+    .card-img-top{
+        height: 240px !important;
+    }
+
     h1 {
         font-size: 24px;
     }
@@ -495,6 +524,10 @@
     .hero_box_link {
         font-size: 10px;
     }
+
+    .event_image img{
+        height: 240px !important;
+    }
 }
 
 
@@ -503,4 +536,11 @@
 ************/
 
 @media only screen and (max-width: 400px) {
+    .card-img-top{
+        height: 200px !important;
+    }
+
+    .event_image img {
+        height: 200px !important;
+    }
 }

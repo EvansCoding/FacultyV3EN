@@ -27,7 +27,7 @@
 
 @media only screen and (max-width: 1600px)
 {
-	
+
 }
 
 /************
@@ -124,6 +124,9 @@
 	{
 		margin-right: 33px;
 	}
+    .news_post_image img {
+        height: 400px !important;
+    }
 }
 
 /************
@@ -189,7 +192,13 @@
 
 @media only screen and (max-width: 768px)
 {
-	
+    .news_post_image img {
+        height: 420px !important;
+    }
+
+    .latest_post_image img {
+        height: 420px !important;
+    }
 }
 
 /************
@@ -391,6 +400,12 @@
 	{
 		padding-left: 19px;
 	}
+    .news_post_image img {
+        height: 220px !important;
+    }
+    .latest_post_image img{
+        height: 220px  !important;
+    }
 }
 
 /************
@@ -399,5 +414,7 @@
 
 @media only screen and (max-width: 400px)
 {
-	
+    .news_post_image img {
+        height: 180px !important;
+    }
 }

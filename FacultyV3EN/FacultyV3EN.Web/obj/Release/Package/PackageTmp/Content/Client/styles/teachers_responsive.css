@@ -106,7 +106,9 @@
 
 @media only screen and (max-width: 1199px)
 {
-	
+    .card_img img{
+        height: 230px !important;
+    }
 }
 
 /************
@@ -136,6 +138,10 @@
 
 @media only screen and (max-width: 991px)
 {
+    .card_img img {
+        height: 560px !important;
+    }
+
     .card_img img{
         height:340px;
     }
@@ -215,7 +221,9 @@
 
 @media only screen and (max-width: 768px)
 {
-	
+    .card_img img {
+        height: 680px !important;
+    }
 }
 
 /************
@@ -238,6 +246,10 @@
 	{
 		margin-top: 15px;
 	}
+
+    .card_img img {
+        height: 480px !important;
+    }
 }
 
 /************
@@ -364,6 +376,10 @@
 		height: 60px;
 		top: 15px;
 	}
+
+    .card_img img {
+        height: 400px !important;
+    }
 }
 
 /************
@@ -372,5 +388,7 @@
 
 @media only screen and (max-width: 400px)
 {
-	
+    .card_img img {
+        height: 300px !important;
+    }
 }

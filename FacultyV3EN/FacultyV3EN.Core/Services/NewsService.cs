@@ -45,7 +45,7 @@ namespace FacultyV3EN.Core.Services
             try
             {
                 var user = accountService.GetAccountByID(account);
-                if (user.Role.Equals(Constants.Constant.ADMIN))
+                if (user.Role.Name.Equals(Constants.Constant.ADMIN))
                 {
                     if (!string.IsNullOrEmpty(name) || !string.IsNullOrEmpty(state))
                     {

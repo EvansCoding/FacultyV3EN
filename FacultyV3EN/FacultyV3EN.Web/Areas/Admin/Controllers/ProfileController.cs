@@ -74,6 +74,7 @@ namespace FacultyV3EN.Web.Areas.Admin.Controllers
                         }
                     }
 
+                    account.Url_Image = model.Url_Image;
                     account.Update_At = DateTime.Now;
 
                     context.SaveChanges();
