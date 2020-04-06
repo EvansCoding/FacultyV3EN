@@ -37,8 +37,14 @@ namespace FacultyV3EN.Web.Controllers
 
         public ActionResult _header()
         {
-            var model = contactService.GetContactByID("E0D4420B-22E2-47D0-B835-E77A010F8EDD");
-            return PartialView(model);
+            var phone = contactService.GetContactByID("E0D4420B-22E2-47D0-B835-E77A010F8EDD");
+
+            ViewBag.Phone = phone;
+            var language = stickyService.GetStickyByID("1a0ecb96-ff94-4523-a9c6-8bddababcbe0");
+
+            ViewBag.Language = language;
+
+            return PartialView();
         }
 
         public ActionResult _footer()
