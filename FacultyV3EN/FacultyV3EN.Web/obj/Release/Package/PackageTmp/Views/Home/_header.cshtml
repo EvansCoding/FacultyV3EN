@@ -1,4 +1,7 @@
-﻿@model FacultyV3EN.Core.Models.Entities.Contact
+﻿@{
+    var phone = (FacultyV3EN.Core.Models.Entities.Contact)ViewBag.Phone;
+    var language = (FacultyV3EN.Core.Models.Entities.Sticky)ViewBag.Language;
+}
 <header class="header d-flex flex-row">
     <div class="header_content d-flex flex-row align-items-center">
         <!-- Logo -->
@@ -28,15 +31,20 @@
     </div>
     <div class="header_side d-flex flex-row justify-content-center align-items-center">
         <img src="~/Content/Client/images/phone-call.svg" alt="">
-        @if (Model != null)
+        @if (phone != null)
         {
-            var phone = "tel:" + @Model.Meta_Value;
-            <a href="@phone">
-                <span>@Model.Meta_Value</span>
+            var tel = "tel:" + phone.Meta_Value;
+            <a href="@tel">
+                <span>@phone.Meta_Value</span>
             </a>
 
         }
-
+        @if (language != null)
+        {
+            <a href="@language.Meta_Value">
+                <img src="~/Content/Client/images/flag/vietnam-flag-icon-32.png" style="margin-left: 10px; margin-bottom: 3px;height: 18px; width: 26px" />
+            </a>
+        }
     </div>
 
     <!-- Hamburger -->
