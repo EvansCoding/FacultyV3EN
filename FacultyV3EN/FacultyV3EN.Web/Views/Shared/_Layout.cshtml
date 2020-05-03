@@ -57,11 +57,19 @@
             }
 
             $.connection.hub.start();
-        });
 
-        window.onbeforeunload = function (e) {
+                    $.connection.hub.disconnected(function () {
+                setTimeout(function () {
+                    $.connection.hub.start();
+                }, 5000); // Restart connection after 5 seconds.
+            });
+
+                window.onbeforeunload = function (e) {
             $.connection.hub.stop();
         };
+        });
+
+
     </script>
 </body>
 </html>
