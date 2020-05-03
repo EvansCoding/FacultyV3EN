@@ -5,63 +5,7 @@
 }
 @Styles.Render("~/client/home/css")
 
-<style>
-    .home {
-        width: 100%;
-        height: 447px;
-    }
-
-    .home_background_container {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-
-    .home_background {
-        width: 100%;
-        height: 100%;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
-    }
-
-    .home_content {
-        position: absolute;
-        left: 50%;
-        bottom: 109px;
-        -webkit-transform: translateX(-50%);
-        -moz-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-        -o-transform: translateX(-50%);
-        transform: translateX(-50%);
-        background: #01BAFD;
-        padding-top: 24px;
-        padding-bottom: 18px;
-        padding-left: 39px;
-        padding-right: 42px;
-    }
-
-    .home_content h1 {
-       font-size: 72px;
-       font-weight: 400;
-       color: #FFFFFF;
-       line-height: 0.5;
-       white-space: nowrap;
-    }
-
-    .register_section {
-        padding-top: 60px;
-        padding-bottom: 60px;
-    }
-
-    p {
-        font-family: Arial, Helvetica, sans-serif;
-    }
-
-    /**/
-</style>
+<link href="~/Content/Client/styles/AboutUs.css" rel="stylesheet" />
 <div class="home">
     <div class="home_background_container prlx_parent">
         <div class="home_background prlx" style="background-image: url('/Content/Client/images/background/1920x1080_dai-hoc-dong-thap.jpg'); transform: translate(0%, -7.35993%) translate3d(0px, 0px, 0px); "></div>
@@ -90,13 +34,61 @@
                         <p class="register_text" style="text-align: justify">
                             <span style="color: #01BAFD;"> <b>The Faculty of Technology - Technology</b></span> was officially established under Decision No. 124 / QD - DHĐT dated March 21, 2018. The Faculty is managing 06 training majors: Computer Education, Environmental Science, Management Land, Aquaculture, Agronomy, Computer Science.
                             <br />
-                            <span style="color: #01BAFD;"> <b>Organizational structure and staff:</b></span>  Faculty of Technology - Technology has 04 Departments with a total of 37 cadres and lecturers with master's degree or higher.
+                            <span style="color: #01BAFD;"> <b>Organizational structure and staff:</b></span>  Faculty of Technology - Technology has 04 Departments with a total of 36 cadres and lecturers with master's degree or higher.
                             <br />
                             <span style="color: #01BAFD ;"> <b>Regarding scientific research:</b></span>        from 2016 to 2020, officials and lecturers of the Faculty of Engineering - Technology have implemented and published many works: 20 international articles, 80 articles published in specialized magazines. domestic industry, 04 ministerial-level projects and 25 grassroots projects.
                         </p>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+<div class="milestones">
+    <div class="milestones_background" style="background-image:url('/Content/Client/images/milestones_background.jpg')"></div>
+
+    <div class="container">
+        <div class="row">
+
+            <!-- Milestone -->
+            <div class="col-lg-3 milestone_col">
+                <div class="milestone text-center">
+                    <div class="milestone_icon"><img src="~/Content/Client/images/vectorpaint(1).svg" alt="..."></div>
+                    <div class="milestone_counter" data-end-value="400">6</div>
+                    <div class="milestone_text">
+                        Specialized Training
+                    </div>
+                </div>
+            </div>
+
+            <!-- Milestone -->
+            <div class="col-lg-3 milestone_col">
+                <div class="milestone text-center">
+                    <div class="milestone_icon"><img src="~/Content/Client/images/vectorpaint(3).svg" alt="..."></div>
+                    <div class="milestone_counter" data-end-value="6">36</div>
+                    <div class="milestone_text">Certified Teachers</div>
+                </div>
+            </div>
+
+            <!-- Milestone -->
+            <div class="col-lg-3 milestone_col">
+                <div class="milestone text-center">
+                    <div class="milestone_icon"><img src="~/Content/Client/images/vectorpaint(2).svg" alt="..."></div>
+                    <div class="milestone_counter" data-end-value="300">+300</div>
+
+                    <div class="milestone_text">Current Students</div>
+                </div>
+            </div>
+
+            <!-- Milestone -->
+            <div class="col-lg-3 milestone_col">
+                <div class="milestone text-center">
+                    <div class="milestone_icon"><img src="~/Content/Client/images/vectorpaint(4).svg" alt="..."></div>
+                    <div class="milestone_counter" data-end-value="3500" data-sign-before="">+3500</div>
+                    <div class="milestone_text">Graduate Students</div>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
@@ -145,6 +137,7 @@
         </div>
     </div>
 </div>
+
 
 <!-- Testimonials -->
 

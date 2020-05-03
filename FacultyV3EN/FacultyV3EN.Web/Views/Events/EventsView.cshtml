@@ -59,12 +59,12 @@
                                             var url = Url.RouteUrl("DETAILEVENTS", new { title = utf8Convert.Instance.ToUrlFriendly(strTitle), id = item.Id.ToString() });
                                         }
 
-                                        <a href="@url" class="text-overflow-string">@item.Title</a>
+                                        <a href="javascript:void(0)" class="text-overflow-string">@item.Title</a>
 
 
                                     </div>
                                     <div class="news_post_meta">
-                                        <span class="news_post_author"><a href="#">By @item.Account.FullName</a></span>
+                                        <span class="news_post_author"><a href="javascript:void(0)">By @item.Account.FullName</a></span>
                                     </div>
                                 </div>
                             </div>
@@ -79,8 +79,9 @@
                         </div>
                     }
                 </div>
-
-                <!-- Page Nav -->
+                @if(Model.PageCount > 1)
+                {   
+                    <!-- Page Nav -->
                 <div class="news_page_nav">
                     <ul>
 
@@ -91,6 +92,9 @@
                         })
                     </ul>
                 </div>
+
+                }
+
             </div>
 
             <!-- Sidebar Column -->

@@ -25,7 +25,13 @@
         max-width: 100%;
         height: auto;
     }
+    .news_post_text table {
+        table-layout: fixed;
+    }
 
+        .news_post_text table td {
+            word-wrap: break-word
+        }
     .news_post_text iframe {
         width: 100%;
         height: 100vh !important;
@@ -73,10 +79,10 @@
                             </div>
                             <div class="news_post_title_container">
                                 <div class="news_post_title">
-                                    <a href="#">@Model.Title</a>
+                                    <a href="javascript:void(0)">@Model.Title</a>
                                 </div>
                                 <div class="news_post_meta">
-                                    <span class="news_post_author"><a href="#">By @Model.Account.FullName</a></span>
+                                    <span class="news_post_author"><a href="javascript:void(0)">By @Model.Account.FullName</a></span>
                                 </div>
                             </div>
                         </div>

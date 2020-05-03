@@ -14,14 +14,16 @@ namespace FacultyV3EN.Web.Controllers
         private readonly IBannerService bannerService;
         private readonly INewsService newsService;
         private readonly IEventsService eventsService;
+        private readonly IConfirgurationService confirgurationService;
         private IDataContext context;
-        public HomeController(IContactService contactService, IStickyService stickyService, IBannerService bannerService, INewsService newsService, IEventsService eventsService, IDataContext context)
+        public HomeController(IContactService contactService, IStickyService stickyService, IBannerService bannerService, INewsService newsService, IEventsService eventsService, IConfirgurationService confirgurationService,IDataContext context)
         {
             this.contactService = contactService;
             this.stickyService = stickyService;
             this.bannerService = bannerService;
             this.newsService = newsService;
             this.eventsService = eventsService;
+            this.confirgurationService = confirgurationService;
             this.context = context;
         }
         public ActionResult Index()
@@ -55,6 +57,8 @@ namespace FacultyV3EN.Web.Controllers
 
         public ActionResult _sticky()
         {
+            var total = confirgurationService.GetConfirgurationByName(Constant.TOTAL_ACCESS);
+            ViewBag.Total = total.Meta_Value;
             var model = stickyService.GetStickys();
             return PartialView(model);
         }

@@ -115,12 +115,12 @@
 
 .news {
     width: 100%;
-    padding-top: 103px;
-    padding-bottom: 50px;
+    padding-top: 50px;
+    padding-bottom: 20px;
 }
 
 .news_post {
-    margin-bottom: 85px;
+    margin-bottom: 25px;
 }
 
     .news_post:last-child {
@@ -164,18 +164,16 @@
 
 .news_post_title_container {
     padding-left: 31px;
-    margin-top: -7px;
+    /*margin-top: -7px;*/
 }
 
 .news_post_title a {
-    font-size: 36px;
+    font-size: 24px;
     font-weight: 500;
     line-height: 1.2;
     color: #1a1a1a;
 }
 
-    .news_post_title a:hover,
-    .news_post_author a:hover,
     .news_post_comments a:hover {
         color: #a5a5a5;
     }

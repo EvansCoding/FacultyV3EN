@@ -83,13 +83,13 @@ p a:hover {
     }
 
 ::selection {
-    background: #FFD266;
-    color: #C88E00;
+    background: #3390FF;
+    color: #FFFFFF;
 }
 
 p::selection {
-    background: #FFD266;
-    color: #C88E00;
+    background: #3390FF;
+    color: #FFFFFF;
 }
 
 h1 {
@@ -607,7 +607,7 @@ section {
 
 .footer {
     width: 100%;
-    padding-top: 50px;
+    /*padding-top: 50px;*/
     background: #1a1a1a;
 }
 
@@ -741,7 +741,9 @@ section {
     padding-top: 19px;
     padding-bottom: 19px;
 }
-
+.footer_social{
+    float: right;
+}
 .footer_social .menu_social_item a i {
     color: #FFFFFF;
 }
@@ -752,4 +754,41 @@ section {
 
 .footer_social .menu_social_item:last-child {
     margin-right: 0px;
+}
+
+@media only screen and (max-width: 991px) {
+    .footer_social {
+        float: none !important;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .footer_bar {
+        padding-top: 20px !important;
+        padding-bottom: 20px !important;
+    }
+    .footer_social {
+        margin-top: 0px !important;
+    }
+}
+
+.button-pressure, .button-jittery {
+    display: none;
+}
+
+.title_in_banner {
+    display: block;
+}
+
+@media only screen and (max-width: 575px) {
+    .home_content {
+        padding-top: 17px;
+        padding-bottom: 11px;
+        padding-left: 22px;
+        padding-right: 24px;
+    }
+
+        .home_content h1 {
+            font-size: 30px;
+        }
 }

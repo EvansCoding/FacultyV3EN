@@ -41,7 +41,6 @@ namespace FacultyV3EN.Web
 
             // Client Layout
             bundles.Add(new ScriptBundle("~/client/script").Include(
-                    "~/Content/Client/js/jquery-3.2.1.min.js",
                     "~/Content/Client/styles/bootstrap4/popper.js",
                     "~/Content/Client/styles/bootstrap4/bootstrap.min.js",
                     "~/Content/Client/plugins/greensock/TweenMax.min.js",

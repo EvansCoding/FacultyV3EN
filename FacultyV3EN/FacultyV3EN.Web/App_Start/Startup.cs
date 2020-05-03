@@ -54,6 +54,7 @@ namespace FacultyV3EN.Web.App_Start
             // Routes
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            app.MapSignalR();
         }
     }
 
