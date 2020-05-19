@@ -1,4 +1,10 @@
 ﻿@model List<FacultyV3EN.Core.Models.Entities.Banner>
+<link href="~/Content/Client/styles/buttonCSS.css" rel="stylesheet" />
+<style>
+    html {
+        scroll-behavior: smooth
+    }
+</style>
 <div class="home">
 
     <!-- Hero Slider -->
@@ -8,18 +14,33 @@
             {
 
                 <!-- Hero Slide -->
-                <div class="hero_slide">
-                    <div class="hero_slide_background" style="background-image:url('@item.Url_Image'); "></div>
-                    <div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
-                        <div class="hero_slide_content text-center" style="width: 100%">
-                            <h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut" style="width: 100%; "> <span>Faculty of Engineering and Technology </span></h1>
+            <div class="hero_slide">
+                <div class="hero_slide_background" style="background-image:url('@item.Url_Image'); ">
+
+                </div>
+                <div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
+                    <div class="hero_slide_content text-center" style="width: 100%; ">
+                        <div class="item button-jittery" style="--bg-color: #f1c40f;">
+                            <a href="#hero_boxes">
+                                <button style="background-color: #3498DB; width: 200px">Welcome to FoET</button>
+                            </a>
+       
+                
                         </div>
+                        <div class="item button-pressure" style="margin-top: 20px;" >
+                            <marquee scrollamount="8" style="color: #fff; font-weight:900;background-color: rgba(0, 158, 226,0.2); text-shadow: 4px 4px 4px #000000;"><span>Faculty of Engineering and Technology, welcome you to visit our website.</span><span>Faculty of Engineering and Technology</span><span>Dong Thap University</span></marquee>
+                        </div>
+                        <h1 id="title_in_banner" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut" style="width: 100%; "> <span>Faculty of Engineering and Technology </span></h1>
                     </div>
                 </div>
 
+            </div>
+
+
             }
         </div>
-            <div class="hero_slider_left hero_slider_nav trans_200"><span class="trans_200">prev</span></div>
-            <div class="hero_slider_right hero_slider_nav trans_200"><span class="trans_200">next</span></div>
-        </div>
+        <div class="hero_slider_left hero_slider_nav trans_200"><span class="trans_200">prev</span></div>
+        <div class="hero_slider_right hero_slider_nav trans_200"><span class="trans_200">next</span></div>
+    </div>
+   
 </div>

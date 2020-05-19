@@ -60,7 +60,7 @@
                         <div class="form-group col-md-6">
                             <label for="recipient-name" class="col-form-label">Image<span class="text-danger"> 750x500</span></label>
                             <div class="input-group">
-                                @Html.TextBoxFor(model => model.Url_Image, new { @id = "fieldID", @class = "form-control path_file", placeholder = "Image" })
+                                @Html.TextBoxFor(model => model.Url_Image, new { @id = "fieldID", @class = "form-control path_file", placeholder = "Image", required ="required" })
                                 @Html.ValidationMessageFor(x => x.Url_Image, "", new { @class = "text-danger" })
                                 <div class="input-group-append btn-upfle">
                                     <a data-toggle="modal" data-target="#myModal1" class="btn btn-dark " style="color: white">

@@ -164,6 +164,18 @@
     <Compile Include="Migrations\202003300732566_initialize_1.designer.cs">
       <DependentUpon>202003300732566_initialize_1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005182229164_Initialize_3.cs" />
+    <Compile Include="Migrations\202005182229164_Initialize_3.designer.cs">
+      <DependentUpon>202005182229164_Initialize_3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005182237032_Initialize_34.cs" />
+    <Compile Include="Migrations\202005182237032_Initialize_34.designer.cs">
+      <DependentUpon>202005182237032_Initialize_34.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005182242023_Initialize_4.cs" />
+    <Compile Include="Migrations\202005182242023_Initialize_4.designer.cs">
+      <DependentUpon>202005182242023_Initialize_4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Entities\Account.cs" />
     <Compile Include="Models\Entities\Banner.cs" />
@@ -203,6 +215,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202003300732566_initialize_1.resx">
       <DependentUpon>202003300732566_initialize_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005182229164_Initialize_3.resx">
+      <DependentUpon>202005182229164_Initialize_3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005182237032_Initialize_34.resx">
+      <DependentUpon>202005182237032_Initialize_34.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005182242023_Initialize_4.resx">
+      <DependentUpon>202005182242023_Initialize_4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

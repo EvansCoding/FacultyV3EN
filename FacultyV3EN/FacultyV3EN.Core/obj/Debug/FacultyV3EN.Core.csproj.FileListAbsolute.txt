@@ -172,3 +172,6 @@ E:\Projects\ASP .Net MVC\Faculty\FacultyV3EN\FacultyV3EN\FacultyV3EN.Core\obj\De
 E:\Projects\ASP .Net MVC\Faculty\FacultyV3EN\FacultyV3EN\FacultyV3EN.Core\obj\Debug\FacultyV3EN.Core.csproj.CopyComplete
 E:\Projects\ASP .Net MVC\Faculty\FacultyV3EN\FacultyV3EN\FacultyV3EN.Core\obj\Debug\FacultyV3EN.Core.dll
 E:\Projects\ASP .Net MVC\Faculty\FacultyV3EN\FacultyV3EN\FacultyV3EN.Core\obj\Debug\FacultyV3EN.Core.pdb
+E:\Projects\ASP .Net MVC\Faculty\FacultyV3EN\FacultyV3EN\FacultyV3EN.Core\obj\Debug\FacultyV3EN.Core.Migrations.Initialize_3.resources
+E:\Projects\ASP .Net MVC\Faculty\FacultyV3EN\FacultyV3EN\FacultyV3EN.Core\obj\Debug\FacultyV3EN.Core.Migrations.Initialize_34.resources
+E:\Projects\ASP .Net MVC\Faculty\FacultyV3EN\FacultyV3EN\FacultyV3EN.Core\obj\Debug\FacultyV3EN.Core.Migrations.Initialize_4.resources

@@ -17,6 +17,7 @@ namespace FacultyV3EN.Core.Models.Entities
         public string Password { get; set; }
         public string FullName { get; set; }
         public string Url_Image { get; set; }
+        public bool Block { get; set; }
         public DateTime Create_At { get; set; }
         public DateTime Update_At { get; set; }
 

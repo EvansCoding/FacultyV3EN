@@ -61,6 +61,9 @@ namespace FacultyV3EN.Web.Areas.Admin.Controllers
         public ActionResult LoadTable(string search, int page = 1, int pageSize = 10)
         {
             var model = accountService.PageList(search, page, pageSize);
+            var session = (UserLogin)Session[Constant.USER_SESSION];
+
+            ViewBag.CheckUser = session.UserID.ToString();
             return PartialView("AccountTablePartialView", model);
         }
 
@@ -132,6 +135,17 @@ namespace FacultyV3EN.Web.Areas.Admin.Controllers
                 try
                 {
                     var account = accountService.GetAccountByID(model.Id);
+                    if (account.Block)
+                    {
+                        account.Password = model.Password;
+                        TempData[Constant.MessageViewBagName] = new GenericMessageViewModel
+                        {
+                            Message = "Mật khẩu đã được cập nhật!",
+                            MessageType = GenericMessages.success
+                        };
+
+                        return RedirectToAction("AccountView", "Account");
+                    }
 
                     if (!account.Email.Equals(model.Email))
                     {
@@ -198,6 +212,10 @@ namespace FacultyV3EN.Web.Areas.Admin.Controllers
             try
             {
                 var account = context.Accounts.Find(new Guid(Id));
+                if (account.Block)
+                {
+                    return Json(new { success = false }, JsonRequestBehavior.AllowGet);
+                }
                 context.Accounts.Remove(account);
                 context.SaveChanges();
                 return Json(new { success = true }, JsonRequestBehavior.AllowGet);

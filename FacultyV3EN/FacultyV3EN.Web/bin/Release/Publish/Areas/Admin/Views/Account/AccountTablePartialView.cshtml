@@ -22,51 +22,93 @@
             <th>Action</th>
         </tr>
     </thead>
+    @{ 
+        var checkUser = (ViewBag.CheckUser as string);
+    }
     <tbody id="DataSearching">
         @{
             List<string> namePublish = new List<string>();
             var index = 1;
             foreach (var item in Model)
             {
-                <tr>
-                    <th scope="row">
-                        @((Model.PageNumber <= 1 ? (index++) : (index++ + (Model.PageNumber * 10) - 10)))
-                    </th>
-                    <td>@item.Email</td>
-                    <td>
-                        <a href="#" target="_blank">
-                            @if (item.Url_Image == null)
-                            {
-                                <img src="~/Content/image.png" style="width: 150px; height: 100px" alt="" />
-                            }
-                            else
-                            {
-                                <img src="@item.Url_Image" style="width: 140px; height: 100px" alt="@item.Url_Image" />
-                            }
-                        </a>
-                    </td>
-                    <td>@item.Role.Name</td>
+                if (checkUser == item.Id.ToString())
+                {
+                    <tr>
+                        <th scope="row">
+                            @((Model.PageNumber <= 1 ? (index++) : (index++ + (Model.PageNumber * 10) - 10)))
+                        </th>
+                        <td>@item.Email</td>
+                        <td>
+                            <a href="#" target="_blank">
+                                @if (item.Url_Image == null)
+                                {
+                                    <img src="~/Content/image.png" style="width: 150px; height: 100px" alt="" />
+                                }
+                                else
+                                {
+                                    <img src="@item.Url_Image" style="width: 140px; height: 100px" alt="@item.Url_Image" />
+                                }
+                            </a>
+                        </td>
+                        <td>@item.Role.Name</td>
 
-                    <td>@item.Update_At</td>
-                    <td>
-                        <div class="button-list">
-                            @{
-                                var uEdit = @Url.Action("AddOrEdit", "Account") + "/" + item.Id;
-                                var urlEdit = @"Popup('" + uEdit + "')";
-                                <a title="Chỉnh sửa" href="@uEdit" class="btn btn-icon waves-effect waves-light btn-primary btn-sm">
-                                    <i class="fa fa-edit" style="color: white"></i>
-                                </a>
+                        <td>@item.Update_At</td>
+                        <td>
+                            <div class="button-list">
+                                @{
+                                    var uEdit = @Url.Action("AddOrEdit", "Account") + "/" + item.Id;
+                                    var urlEdit = @"Popup('" + uEdit + "')";
+                                    <a title="Chỉnh sửa" href="@uEdit" class="btn btn-icon waves-effect waves-light btn-primary btn-sm">
+                                        <i class="fa fa-edit" style="color: white"></i>
+                                    </a>
+                                }
+                            </div>
+                        </td>
+                    </tr>
+                }
+                else
+                {
+                    <tr>
+                        <th scope="row">
+                            @((Model.PageNumber <= 1 ? (index++) : (index++ + (Model.PageNumber * 10) - 10)))
+                        </th>
+                        <td>@item.Email</td>
+                        <td>
+                            <a href="#" target="_blank">
+                                @if (item.Url_Image == null)
+                                {
+                                    <img src="~/Content/image.png" style="width: 150px; height: 100px" alt="" />
+                                }
+                                else
+                                {
+                                    <img src="@item.Url_Image" style="width: 140px; height: 100px" alt="@item.Url_Image" />
+                                }
+                            </a>
+                        </td>
+                        <td>@item.Role.Name</td>
 
-                                var uDelete = @Url.Action("Delete", "Account") + "/" + item.Id;
-                                var urluDelete = @"Delete('" + uDelete + "')";
+                        <td>@item.Update_At</td>
+                        <td>
+                            <div class="button-list">
+                                @{
+                                    var uEdit = @Url.Action("AddOrEdit", "Account") + "/" + item.Id;
+                                    var urlEdit = @"Popup('" + uEdit + "')";
+                                    <a title="Chỉnh sửa" href="@uEdit" class="btn btn-icon waves-effect waves-light btn-primary btn-sm">
+                                        <i class="fa fa-edit" style="color: white"></i>
+                                    </a>
 
-                                <a title="Xóa" onclick="@urluDelete" class="btn btn-icon waves-effect waves-light btn-danger btn-sm btn-delete">
-                                    <i class="fa fa-trash" style="color: white"></i>
-                                </a>
-                            }
-                        </div>
-                    </td>
-                </tr>
+                                    var uDelete = @Url.Action("Delete", "Account") + "/" + item.Id;
+                                    var urluDelete = @"Delete('" + uDelete + "')";
+
+                                    <a title="Xóa" onclick="@urluDelete" class="btn btn-icon waves-effect waves-light btn-danger btn-sm btn-delete">
+                                        <i class="fa fa-trash" style="color: white"></i>
+                                    </a>
+                                }
+                            </div>
+                        </td>
+                    </tr>
+                }
+
             }
         }
     </tbody>

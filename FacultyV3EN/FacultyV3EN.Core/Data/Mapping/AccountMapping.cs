@@ -15,6 +15,7 @@ namespace FacultyV3EN.Core.Data.Mapping
             Property(x => x.Create_At).IsOptional();
             Property(x => x.Update_At).IsOptional();
             Property(x => x.Url_Image).IsOptional();
+            Property(x => x.Block).IsRequired();
 
             HasMany(x => x.Events)
                 .WithRequired(x => x.Account)

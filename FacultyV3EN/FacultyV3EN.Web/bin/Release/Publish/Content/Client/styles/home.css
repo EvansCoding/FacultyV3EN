@@ -366,7 +366,7 @@
 
 .register_section {
     width: 100%;
-    background: #626262;
+    background: #fff;
     padding-top: 156px;
     padding-bottom: 161px;
 }
@@ -376,7 +376,7 @@
 }
 
 .register_title {
-    color: #FFFFFF;
+    color: #000;
     margin-bottom: 16px;
     line-height: 1.63;
 }
@@ -390,7 +390,7 @@
     }
 
 .register_text {
-    color: #FFFFFF;
+    color: #000;
     font-weight: 500;
     margin-top: 32px;
     padding-left: 25px;
@@ -706,3 +706,57 @@ input:last-of-type {
     .event_image img {
         width: 100%;
     }
+
+/*********************************
+10. Milestones
+*********************************/
+
+.milestones {
+    width: 100%;
+    padding-top: 118px;
+    padding-bottom: 107px;
+}
+
+.milestones_background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.milestone {
+    width: 100%;
+}
+
+.milestone_icon {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+}
+
+    .milestone_icon img {
+        width: 100%;
+    }
+
+.milestone_counter {
+    font-size: 36px;
+    font-weight: 500;
+    color: #01BAFD;
+    line-height: 1;
+    margin-top: 10px;
+
+}
+
+.milestone_text {
+    font-size: 22px;
+    font-weight: 500;
+    color: #FFFFFF;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+

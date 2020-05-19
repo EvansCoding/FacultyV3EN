@@ -154,8 +154,13 @@
 ************/
 
 @media only screen and (max-width: 991px) {
-
-    .hero_slide_content h1 span{
+    .button-pressure, .button-jittery {
+        display: block;
+    }
+    .title_in_banner{
+        display: none;
+    }
+    .hero_slide_content h1 span {
         visibility: hidden;
     }
 
@@ -257,6 +262,10 @@
     .card-img-top{
         height: 360px !important;
     }
+
+    .footer_social {
+        float: none !important;
+    }
 }
 
 
@@ -317,7 +326,12 @@
 ************/
 
 @media only screen and (max-width: 575px) {
-
+    .home_content {
+        padding-top: 17px;
+        padding-bottom: 11px;
+        padding-left: 22px;
+        padding-right: 24px;
+    }
     .card-img-top{
         height: 240px !important;
     }
@@ -447,14 +461,10 @@
         margin-top: 5px;
     }
 
-    .footer_bar {
+    /*.footer_bar {
         padding-top: 49px;
         padding-bottom: 52px;
-    }
-
-    .footer_social {
-        margin-top: 20px;
-    }
+    }*/
 
     .footer_copyright span {
         font-size: 13px;

@@ -59,10 +59,10 @@
                                             var strTitle = item.Title.Count() <= 100 ? item.Title.Replace("-", " ") : item.Title.Substring(0, 100).Replace("-", " ");
                                             var url = Url.RouteUrl("DETAILNEWS", new { title = utf8Convert.Instance.ToUrlFriendly(strTitle), id = item.Id.ToString() });
                                         }
-                                        <a href="@url" class="text-overflow-string">@item.Title</a>
+                                        <a href="javascript:void(0)" class="text-overflow-string">@item.Title</a>
                                     </div>
                                     <div class="news_post_meta">
-                                        <span class="news_post_author"><a href="#">By @item.Account.FullName</a></span>
+                                        <span class="news_post_author"><a href="javascript:void(0)">By @item.Account.FullName</a></span>
                                     </div>
                                 </div>
                             </div>
