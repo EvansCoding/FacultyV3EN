@@ -137,10 +137,27 @@ namespace FacultyV3EN.Web.Areas.Admin.Controllers
                     var account = accountService.GetAccountByID(model.Id);
                     if (account.Block)
                     {
-                        account.Password = model.Password;
+                        if (model.Password != null)
+                        {
+                            var passwordHash = Hash.Instance.ComputeSha256Hash(model.Password);
+                            if (!account.Password.Equals(passwordHash) && model.Password.Length >= 6)
+                                account.Password = passwordHash;
+                            else
+                            {
+                                TempData[Constant.MessageViewBagName] = new GenericMessageViewModel
+                                {
+                                    Message = "Update Failed",
+                                    MessageType = GenericMessages.error
+                                };
+                                return RedirectToAction("AccountView", "Account");
+                            }
+                        }
+                        account.FullName = model.FullName;
+                        account.Url_Image = model.Url_Image;
+                        context.SaveChanges();
                         TempData[Constant.MessageViewBagName] = new GenericMessageViewModel
                         {
-                            Message = "Mật khẩu đã được cập nhật!",
+                            Message = "Update Successfull!",
                             MessageType = GenericMessages.success
                         };
 
