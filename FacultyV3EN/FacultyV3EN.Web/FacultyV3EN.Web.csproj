@@ -15,7 +15,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>FacultyV3EN.Web</RootNamespace>
     <AssemblyName>FacultyV3EN.Web</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -420,8 +420,11 @@
     <Content Include="Content\Client\images\background\1920x1080_dai-hoc-dong-thap.jpg" />
     <Content Include="Content\Client\images\background\bgstudent.png" />
     <Content Include="Content\Client\images\become.jpg" />
+    <Content Include="Content\Client\images\blackboard.png" />
     <Content Include="Content\Client\images\blackboard.svg" />
+    <Content Include="Content\Client\images\books.png" />
     <Content Include="Content\Client\images\books.svg" />
+    <Content Include="Content\Client\images\books_blue.png" />
     <Content Include="Content\Client\images\books_blue.svg" />
     <Content Include="Content\Client\images\comment_1.jpg" />
     <Content Include="Content\Client\images\comment_2.jpg" />
@@ -436,13 +439,18 @@
     <Content Include="Content\Client\images\course_7.jpg" />
     <Content Include="Content\Client\images\course_8.jpg" />
     <Content Include="Content\Client\images\course_9.jpg" />
+    <Content Include="Content\Client\images\earth-globe.png" />
     <Content Include="Content\Client\images\earth-globe.svg" />
+    <Content Include="Content\Client\images\earth-globe_blue.png" />
     <Content Include="Content\Client\images\earth-globe_blue.svg" />
+    <Content Include="Content\Client\images\envelope.png" />
     <Content Include="Content\Client\images\envelope.svg" />
     <Content Include="Content\Client\images\event_1.jpg" />
     <Content Include="Content\Client\images\event_2.jpg" />
     <Content Include="Content\Client\images\event_3.jpg" />
+    <Content Include="Content\Client\images\exam.png" />
     <Content Include="Content\Client\images\exam.svg" />
+    <Content Include="Content\Client\images\exam_blue.png" />
     <Content Include="Content\Client\images\exam_blue.svg" />
     <Content Include="Content\Client\images\flag\logokonen.ico" />
     <Content Include="Content\Client\images\flag\logokonen.jpg" />
@@ -457,20 +465,29 @@
     <Content Include="Content\Client\images\latest_3.jpg" />
     <Content Include="Content\Client\images\logo.png" />
     <Content Include="Content\Client\images\milestones_background.jpg" />
+    <Content Include="Content\Client\images\milestone_1.png" />
     <Content Include="Content\Client\images\milestone_1.svg" />
+    <Content Include="Content\Client\images\milestone_2.png" />
     <Content Include="Content\Client\images\milestone_2.svg" />
+    <Content Include="Content\Client\images\milestone_3.png" />
     <Content Include="Content\Client\images\milestone_3.svg" />
+    <Content Include="Content\Client\images\milestone_4.png" />
     <Content Include="Content\Client\images\milestone_4.svg" />
+    <Content Include="Content\Client\images\mortarboard.png" />
     <Content Include="Content\Client\images\mortarboard.svg" />
     <Content Include="Content\Client\images\news_1.jpg" />
     <Content Include="Content\Client\images\news_2.jpg" />
     <Content Include="Content\Client\images\news_3.jpg" />
     <Content Include="Content\Client\images\news_background.jpg" />
+    <Content Include="Content\Client\images\phone-call.png" />
     <Content Include="Content\Client\images\phone-call.svg" />
+    <Content Include="Content\Client\images\placeholder.png" />
     <Content Include="Content\Client\images\placeholder.svg" />
+    <Content Include="Content\Client\images\professor.png" />
     <Content Include="Content\Client\images\professor.svg" />
     <Content Include="Content\Client\images\search_background.jpg" />
     <Content Include="Content\Client\images\slider_background.jpg" />
+    <Content Include="Content\Client\images\smartphone.png" />
     <Content Include="Content\Client\images\smartphone.svg" />
     <Content Include="Content\Client\images\Student\student_An.jpg" />
     <Content Include="Content\Client\images\Student\student_Duy3.jpg" />
@@ -485,10 +502,14 @@
     <Content Include="Content\Client\images\testimonials_background.jpg" />
     <Content Include="Content\Client\images\testimonials_background_2.jpg" />
     <Content Include="Content\Client\images\testimonials_user.jpg" />
+    <Content Include="Content\Client\images\vectorpaint%281%29.png" />
     <Content Include="Content\Client\images\vectorpaint%281%29.svg" />
+    <Content Include="Content\Client\images\vectorpaint%282%29.png" />
     <Content Include="Content\Client\images\vectorpaint%282%29.svg" />
+    <Content Include="Content\Client\images\vectorpaint%283%29.png" />
     <Content Include="Content\Client\images\vectorpaint%283%29.svg" />
     <Content Include="Content\Client\images\vectorpaint%284%29.svg" />
+    <Content Include="Content\Client\images\vectorpaint.png" />
     <Content Include="Content\Client\js\contact_custom.js" />
     <Content Include="Content\Client\js\courses_custom.js" />
     <Content Include="Content\Client\js\custom.js" />
@@ -1076,6 +1097,7 @@
     <Content Include="Areas\Admin\Views\Events\CRUDEvents.cshtml" />
     <Content Include="Areas\Admin\Views\Events\EventsTablePartialView.cshtml" />
     <Content Include="Areas\Admin\Views\Events\EventsView.cshtml" />
+    <Content Include="Content\Client\images\svgtopng.zip" />
     <None Include="packages.config" />
     <Content Include="Scripts\tinymce\langs\readme.md" />
     <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-mobile.woff" />
